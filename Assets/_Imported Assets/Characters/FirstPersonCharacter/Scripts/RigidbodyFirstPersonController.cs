@@ -8,6 +8,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class RigidbodyFirstPersonController : MonoBehaviour
     {
+		[Header("Inputs")]
+		public string Jump = "Jump";
+		public string HorizontalAxis = "Horizontal";
+		public string VerticalAxis = "Vertical";
+
+
         [Serializable]
         public class MovementSettings
         {
@@ -130,7 +136,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
 
-            if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
+            if (CrossPlatformInputManager.GetButtonDown(Jump) && !m_Jump)
             {
                 m_Jump = true;
             }
@@ -214,8 +220,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             
             Vector2 input = new Vector2
                 {
-                    x = CrossPlatformInputManager.GetAxis("Horizontal"),
-                    y = CrossPlatformInputManager.GetAxis("Vertical")
+				x = CrossPlatformInputManager.GetAxis(HorizontalAxis),
+				y = CrossPlatformInputManager.GetAxis(VerticalAxis)
                 };
 			movementSettings.UpdateDesiredTargetSpeed(input);
             return input;

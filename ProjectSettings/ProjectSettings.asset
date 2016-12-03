@@ -461,6 +461,7 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     Collab: 1
+    UNet: 1
   cloudProjectId: 763d31da-aa36-48d3-8414-2194c4058d8a
   projectName: COMP305-F2016-Lesson12
   organizationId: tom-tsiliopoulos
